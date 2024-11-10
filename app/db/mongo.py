@@ -1,4 +1,4 @@
-
+import logging
 import os
 import threading
 from pymongo.mongo_client import MongoClient
@@ -29,6 +29,6 @@ class MongoDB:
         # Send a ping to confirm a successful connection
         try:
             self.client.admin.command('ping')
-            print("Pinged your deployment. You successfully connected to MongoDB!")
+            logging.info("Pinged your deployment. You successfully connected to MongoDB!")
         except Exception as e:
-            print(e)
+            logging.critical(f"Failed to connect to MongoDB: {e}")

@@ -1,9 +1,12 @@
+import logging
 import os
 from app.config import initEnv
 from app.db.mongo import MongoDB
 from flask import Flask, render_template
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @app.route('/')
 def index():
