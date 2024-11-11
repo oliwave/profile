@@ -41,11 +41,11 @@ cs633 #1
 
 ## Get started
 
-- Run the web app and spin up the MongoDB
-  - `docker compose up --bulid`
-- Checkout the website
-  - http://localhost:5001
-- Changes are reflected automatically without restarting
+1. Run the web app and spin up the MongoDB
+    - `docker compose up --bulid`
+2. Checkout the website
+    - http://localhost:5001
+3. Code changes are reflected automatically without restarting
 
 ## Clean up
 
@@ -56,13 +56,13 @@ cs633 #1
 
 1. After local development, commit your changes and push commit to the remote branch
 2. Raise a Pull Requset for your branch against the `main` branch
-  - ![alt text](<docs/pull request.png>)
+    - ![alt text](<docs/pull request.png>)
 3. Click the **"Vist Preview"** under the **Preview** column
 4. Verify the web app deployed by Vercel
 
 # Deploy to production environment
 1. If everything works in the preview environment, merge it to the `main` branch
-2. Vercel will then deploy the web app to the production environment on [profile-cs633.vercel.app](profile-cs633.vercel.app)
+2. Vercel will then deploy the web app to the production environment on [profile-cs633.vercel.app](https://profile-cs633.vercel.app)
 
 
 ## Troubleshoot
