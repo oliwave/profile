@@ -42,7 +42,7 @@ cs633 #1
 ## Get started
 
 1. Run the web app and spin up the MongoDB
-    - `docker compose up --bulid`
+    - `docker compose up --build`
 2. Checkout the website
     - http://localhost:5001
 3. Code changes are reflected automatically without restarting
