@@ -1,6 +1,4 @@
-import logging
-
-from bson import ObjectId
+from bson import ObjectId, errors
 from flask import Blueprint, jsonify, request
 from app.db.mongo import MongoDB
 
@@ -16,7 +14,13 @@ def get_user(user_id: str):
     Get a user by their ID.
     """
     
-    user = users_collection.find_one({'_id': ObjectId(user_id)})
+    id = None
+    try: 
+        id = ObjectId(user_id)
+    except errors.InvalidId:
+        return jsonify({"error": "Invalid user ID format"}), 400
+    
+    user = users_collection.find_one({'_id': id})
     user['_id'] = str(user['_id'])
 
     if user:
@@ -24,8 +28,8 @@ def get_user(user_id: str):
     else:
         return jsonify({"error": "User not found"}), 404
 
-@user_bp.route('/users', defaults={'start': 1, 'amount': 10})
-@user_bp.route('/users/<int:start>/<int:end>/', methods=['GET'])
+@user_bp.route('/users', defaults={'start': 0, 'amount': 10})
+@user_bp.route('/users/<int:start>/<int:amount>/', methods=['GET'])
 def list_user(start: int, amount: int):
     """
     List users from start index with given amount.
