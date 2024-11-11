@@ -3,29 +3,30 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="stylesheet" href="/static/css/styles.css">
 		<title>Profile</title>
 	</head>
 	<body>
 		<div class="navigation">
 			<ul class="navigation-bar">
-				<li><a href="#_sayhello">TeamA</a></li>
-				<li><a href="#_introduction">About</a></li>
-				<li><a href="#_myField">MyField</a></li>
-				<li><a href="#_myLife">MyLife</a></li>
-				<li><a href="#_givingAndGaining">Giving and Gaining</a></li>
-				<li><a href="#_contact">Contact</a></li>
+				<li class="nav_item"><a class="nav_link active-link" href="#_sayhello"><i class='bx bxs-home'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_introduction"><i class='bx bxs-info-circle'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_myField"><i class='bx bx-sitemap'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_myLife"><i class='bx bxs-user-circle'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_givingAndGaining"><i class='bx bxs-search'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_contact"><i class='bx bxs-message-dots'></i></a></li>
 			</ul>			
 		</div>
 		
 		<div class="sayhello" id="_sayhello">
 			<div class = "sayhello_text">
-			    <h1 id="_say_hi">Hi,</br>we are Team A, web developers</h1>
+			    <h1 id="_say_hi">Hi,<br>we are Team A, web developers</h1>
 			</div>
 			<div class="sayhello_photo">
 				<img id="_personal_photo" src="/static/img/photo1.png" width="400" height="250"/>
 			</div>
-			</br>
+			<br>
 			<a href="_contact">Contact</a>
 		</div>
 		
@@ -137,13 +138,13 @@
 				<form action="">
 					<input type="mail" placeholder="Email" />
 					<textarea></textarea>
-					<input type="button" value="contact"/>
+					<input class="button" type="button" value="contact"/>
 				</form>
 			</div>
 			<p>or,you can leave me a message.</p>
 			<div class="contact-message">
 				<input type="text" name="" id="">
-				<input type="button" value="send" id="">
+				<input type="button" class="button" value="send" id="">
 			</div>
 		</div>	
 
