@@ -10,14 +10,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 @app.route('/')
 def index():
-    return render_template("index.html", template_folder="/templates")
+    return render_template("index.html")
 
 if __name__ == '__main__':
     initEnv()
     
-    mongo = MongoDB()
-    mongo.connect()
+    # mongo = MongoDB()
+    # mongo.connect()
     
     enalbe_debug = True if os.getenv("DEBUG") == "True" else False
 
-    app.run(debug=enalbe_debug)
+    app.run(debug=enalbe_debug, host='0.0.0.0', port=os.getenv("PORT"))

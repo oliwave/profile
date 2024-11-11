@@ -1,0 +1,12 @@
+.DS_Store
+
+# Python venv folders
+bin
+include
+lib
+pyvenv.cfg
+__pycache__
+
+Dockerfile
+docker-compose.yml
+.git

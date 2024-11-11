@@ -14,3 +14,5 @@ def initEnv() -> None:
   dotenv_path = Path(f'./{dotenv_file}')
 
   load_dotenv(dotenv_path=dotenv_path)
+
+  # logging.info(f"The MONGODB_URI: {os.getenv("MONGODB_URI")}")

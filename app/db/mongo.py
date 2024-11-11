@@ -31,4 +31,5 @@ class MongoDB:
             self.client.admin.command('ping')
             logging.info("Pinged your deployment. You successfully connected to MongoDB!")
         except Exception as e:
+            logging.critical(f"The MONGODB_URI: {os.getenv("MONGODB_URI")}")
             logging.critical(f"Failed to connect to MongoDB: {e}")
