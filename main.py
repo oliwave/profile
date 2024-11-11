@@ -15,8 +15,8 @@ def index():
 if __name__ == '__main__':
     initEnv()
     
-    # mongo = MongoDB()
-    # mongo.connect()
+    mongo = MongoDB()
+    mongo.connect()
     
     enalbe_debug = True if os.getenv("DEBUG") == "True" else False
 
