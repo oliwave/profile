@@ -54,7 +54,16 @@ cs633 #1
 
 # Deploy to the preview environment
 
-1. 
+1. After local development, commit your changes and push commit to the remote branch
+2. Raise a Pull Requset for your branch against the `main` branch
+  - ![alt text](<docs/pull request.png>)
+3. Click the **"Vist Preview"** under the **Preview** column
+4. Verify the web app deployed by Vercel
+
+# Deploy to production environment
+1. If everything works in the preview environment, merge it to the `main` branch
+2. Vercel will then deploy the web app to the production environment on [profile-cs633.vercel.app](profile-cs633.vercel.app)
+
 
 ## Troubleshoot
 
