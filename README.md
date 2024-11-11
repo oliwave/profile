@@ -31,3 +31,44 @@ cs633 #1
 
 ## templates
 - All HTML files
+
+# Local Development
+
+## Prerequisite
+- Install Docker
+  - [MacOS](https://docs.docker.com/desktop/setup/install/mac-install/)
+  - [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+
+## Get started
+
+- Run the web app and spin up the MongoDB
+  - `docker compose up --bulid`
+- Checkout the website
+  - http://localhost:5001
+- Changes are reflected automatically without restarting
+
+## Clean up
+
+- Shut down the web app and DB
+  - `docker compose down`
+
+# Deploy to the preview environment
+
+1. After local development, commit your changes and push commit to the remote branch
+2. Raise a Pull Requset for your branch against the `main` branch
+  - ![alt text](<docs/pull request.png>)
+3. Click the **"Vist Preview"** under the **Preview** column
+4. Verify the web app deployed by Vercel
+
+# Deploy to production environment
+1. If everything works in the preview environment, merge it to the `main` branch
+2. Vercel will then deploy the web app to the production environment on [profile-cs633.vercel.app](profile-cs633.vercel.app)
+
+
+## Troubleshoot
+
+### Show errors when running `docker compose up --build`
+
+`error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH, out: `` `
+
+> You should delete the line with credsStore from ~/.docker/config.json or rename credsStore to credStore.
