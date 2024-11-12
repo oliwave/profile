@@ -72,3 +72,14 @@ cs633 #1
 `error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH, out: `` `
 
 > You should delete the line with credsStore from ~/.docker/config.json or rename credsStore to credStore.
+
+# API
+
+- Get a list of users
+  - **GET** method 
+    - Default `/api/users`
+    - With params `/api/users/<start_index>/<amount of users>`
+- Get a user by ID
+  - **GET** method `/api/user/<user_id>`
+- Create a user
+  - **POST** method `/api/user`
