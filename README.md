@@ -79,7 +79,25 @@ cs633 #1
   - **GET** method 
     - Default `/api/users`
     - With params `/api/users/<start_index>/<amount of users>`
+    - Example: 
+      ```
+      curl -X GET -H "Content-Type: application/json" http://localhost:5001/api/users
+      ```
 - Get a user by ID
   - **GET** method `/api/user/<user_id>`
+  - Example: 
+    ```
+    curl -X GET -H "Content-Type: application/json" http://localhost:5001/api/user/<user_id>
+    ```
 - Create a user
   - **POST** method `/api/user`
+  - Example: 
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{"name": "Oliver", "email": "oliver@bu.edu", "password": "testtesttest"}' http://localhost:5001/api/user
+    ```
+- Update a user
+  - **PUT** method `/api/user/<user_id>`
+  - Example: 
+    ```
+    curl -X PUT -H "Content-Type: application/json" -d '{"name": "Oliver", "email": "oliver@bu.edu", "old_password": "testtesttest", "new_password": "testtesttest"}' http://localhost:5001/api/user/<user_id>
+    ```
