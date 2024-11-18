@@ -1,0 +1,39 @@
+@import url('styles.css');
+
+#users_container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: hsl(var(--second-hue), 32%, 12%);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#users_container li {
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: hsl(var(--second-hue), 32%, 12%);
+    border-bottom: 1px solid hsl(var(--second-hue), 8%, 75%);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #users_container li:hover {
+    background-color: hsl(var(--second-hue), 32%, 18%);
+    border-color: hsl(var(--first-hue), var(--sat), 71%);
+    transform: scale(1.02);
+  }
+  
+  #users_container li a {
+    font-weight: bold;
+    color: hsl(var(--second-hue), 15%, 95%);
+  }
+  
+  #users_container li span.role {
+    font-style: italic;
+    color: hsl(var(--first-hue), var(--sat), var(--lig));
+  }
+
