@@ -2,25 +2,21 @@ import logging
 import os
 from app.config import initEnv
 from app.db.mongo import MongoDB
-from flask import Flask, render_template
+from flask import Flask
+from app import create_app
 
-app = Flask(__name__)
+logging.basicConfig(
+    level=logging.INFO,  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
+    handlers=[
+        logging.StreamHandler()  # Output logs to console (stdout)
+    ]
+)
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-@app.route('/list')
-def list_page():
-    return render_template('list.html')
-
-@app.route('/')
-def index():
-    return render_template("index.html")
+app = create_app(Flask(__name__, template_folder="./templates"))
 
 if __name__ == '__main__':
     initEnv()
-    
-    mongo = MongoDB()
-    mongo.connect()
     
     enalbe_debug = True if os.getenv("DEBUG") == "True" else False
 

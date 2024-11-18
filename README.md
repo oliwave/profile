@@ -42,7 +42,7 @@ cs633 #1
 ## Get started
 
 1. Run the web app and spin up the MongoDB
-    - `docker compose up --bulid`
+    - `docker compose up --build`
 2. Checkout the website
     - http://localhost:5001
 3. Code changes are reflected automatically without restarting
@@ -72,3 +72,32 @@ cs633 #1
 `error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH, out: `` `
 
 > You should delete the line with credsStore from ~/.docker/config.json or rename credsStore to credStore.
+
+# API
+
+- Get a list of users
+  - **GET** method 
+    - Default `/api/users`
+    - With params `/api/users/<start_index>/<amount of users>`
+    - Example: 
+      ```
+      curl -X GET -H "Content-Type: application/json" http://localhost:5001/api/users
+      ```
+- Get a user by ID
+  - **GET** method `/api/user/<user_id>`
+  - Example: 
+    ```
+    curl -X GET -H "Content-Type: application/json" http://localhost:5001/api/user/<user_id>
+    ```
+- Create a user
+  - **POST** method `/api/user`
+  - Example: 
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{"name": "Oliver", "email": "oliver@bu.edu", "password": "testtesttest"}' http://localhost:5001/api/user
+    ```
+- Update a user
+  - **PUT** method `/api/user/<user_id>`
+  - Example: 
+    ```
+    curl -X PUT -H "Content-Type: application/json" -d '{"name": "Oliver", "email": "oliver@bu.edu", "old_password": "testtesttest", "new_password": "testtesttest"}' http://localhost:5001/api/user/<user_id>
+    ```

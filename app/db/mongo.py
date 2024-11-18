@@ -1,4 +1,3 @@
-import logging
 import os
 import threading
 from pymongo.mongo_client import MongoClient
@@ -20,16 +19,19 @@ class MongoDB:
         return cls._unique_instance
     
     def __init__(self):
-        self.client = None
+        self.client = self.connect()
 
     def connect(self):
         # Create a new client and connect to the server
-        self.client = MongoClient(uri, server_api=ServerApi('1'))
+        client = MongoClient(uri, server_api=ServerApi('1'))
 
         # Send a ping to confirm a successful connection
         try:
-            self.client.admin.command('ping')
-            logging.info("Pinged your deployment. You successfully connected to MongoDB!")
+            client.admin.command('ping')
+            print("Pinged your deployment. You successfully connected to MongoDB!")
+            client = client['profile']
         except Exception as e:
-            logging.critical(f"The MONGODB_URI: {os.getenv("MONGODB_URI")}")
-            logging.critical(f"Failed to connect to MongoDB: {e}")
+            print(f"The MONGODB_URI: {os.getenv("MONGODB_URI")}")
+            print(f"Failed to connect to MongoDB: {e}")
+            
+        return client
