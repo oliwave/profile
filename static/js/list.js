@@ -1,17 +1,6 @@
-const API_URL = 'http://localhost:5001/api/users';
+const API_URL = 'http://profile-cs633.vercel.app/api/users';
 
-const items = [
-    { name: "Annie Zheng, MSHRM", role: "Talent Acquisition Partner at Bytedance" },
-    { name: "Akhil Vashisht", role: "Delivery Manager @ MindSource" },
-    { name: "Ryan Williams", role: "Technical Recruiter @ Optomi" },
-    { name: "Yi-En (Ivy) Liu", role: "MS in Business Analytics'25 @ UC Irvine" },
-    { name: "Shun Mok Bhark", role: "All things software" },
-    { name: "Samantha Bueno", role: "Manager, Software Engineering at Red Hat" },
-    { name: "Sunil Kumar", role: "Account Manager - Recruitment" },
-    { name: "Yu Chen Hsiao", role: "IM@NCU" }
-];
-
-const url = "http://localhost:5001";
+const url = 'http://profile-cs633.vercel.app';
 
 const renderItem = (items) =>{
     
@@ -26,29 +15,30 @@ const renderItem = (items) =>{
 
         const roleSpan = document.createElement('span');
         roleSpan.classList.add('role');
-        roleSpan.textContent = item.role;
+        roleSpan.textContent = item.email;
         listItem.appendChild(roleSpan);
 
         itemList.appendChild(listItem);
     });
 }
 
-renderItem(items);
-axios
-  .get(API_URL)
+fetch(API_URL)
   .then(response => {
-
-    const item = response.data;
-    renderItem(item);
+    console.log('Response status:', response.status);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); 
+  })
+  .then(data => {
+    console.log('Fetched user data:', data);
+    renderItem(data);
   })
   .catch(error => {
-    // Report error when get api goes wrong
     console.error('Error fetching user data:', error);
+    const itemList = document.getElementById('users_container');
     itemList.textContent = 'Failed to load user data.';
   });
-
-
-
 
 /*
 axios
