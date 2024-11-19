@@ -191,6 +191,11 @@ img {
   box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
 }
 
+a{
+  font-weight: bold;
+    color: hsl(var(--second-hue), 15%, 9);
+}
+
 /* Change background header */
 
 
