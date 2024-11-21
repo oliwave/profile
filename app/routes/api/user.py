@@ -1,5 +1,6 @@
+import logging
 from bson import ObjectId, errors
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, session, redirect, render_template, url_for
 from app.db.mongo import MongoDB
 
 # Create a blueprint
@@ -13,6 +14,9 @@ def get_user(user_id: str):
     """
     Get a user by their ID.
     """
+    
+    if 'user' not in session:
+        return redirect(url_for('auth.login'))
     
     id = None
     try: 
@@ -36,6 +40,9 @@ def list_user(start: int, amount: int):
     List users from start index with given amount.
     """
     
+    if 'user' not in session:
+        return redirect(url_for('auth.login'))
+    
     users = list(users_collection.find().skip(start).limit(amount))
     
     for user in users:
@@ -50,36 +57,40 @@ def create_user():
     Create a user.
     """
 
+    if 'user' in session:
+        return jsonify({"error": "logout and create new user"}), 400
+
     # Get data from the request
     user_data = request.json  # Assumes JSON payload
     if not user_data:
         return jsonify({"error": "No data provided"}), 400
-    elif not "password" in user_data or not "email" in user_data:
-        return jsonify({"error": "Password or email is empty!"}), 404
+    elif not "password" in user_data or not "email" in user_data or not "name" in user_data:
+        return jsonify({"error": "Password, email or username is empty!"}), 400
 
     if not isBUEmail(user_data["email"]):
-        return jsonify({"error": "Only allow BU students to join!"}), 404
+        return jsonify({"error": "Only allow BU students to join!"}), 400
     
     if not passPassworddLen(user_data["password"]):
-        return jsonify({"error": "Password must at least has 10 characters"}), 404
-
-    if not passPassworddLen(user_data["name"]):
-        return jsonify({"error": "User must has a name"}), 404
+        return jsonify({"error": "Password must at least has 10 characters"}), 400
 
     user = users_collection.find_one({"email": user_data["email"]})
     
     if user:
-        return jsonify({"message": "The user already exists!", "user": str(user_data)}), 404
+        return jsonify({"error": "The user already exists!", "user": str(user_data)}), 400
 
     # Insert user data into MongoDB
     result = users_collection.insert_one(user_data)
-    return jsonify({"message": "User added", "user_id": str(result.inserted_id)})
+    
+    return redirect(url_for("auth.login"))
 
 @user_bp.route('/user/<string:user_id>', methods=['PUT'])
 def update_user(user_id: str):
     """
-    Create a user.
+    Modify a user.
     """
+    
+    if 'user' not in session:
+        return redirect(url_for('auth.login'))
     
     user_data = request.json
     

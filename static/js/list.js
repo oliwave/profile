@@ -1,6 +1,9 @@
-const API_URL = 'http://profile-cs633.vercel.app/api/users';
+// const API_URL = 'http://localhost:5001/api/users';
 
-const url = 'http://profile-cs633.vercel.app';
+// const url = 'http://localhost:5001/user/';
+const API_URL = 'https://profile-cs633.vercel.app/api/users';
+
+const url = 'https://profile-cs633.vercel.app/user/';
 
 const renderItem = (items) =>{
     
@@ -9,7 +12,9 @@ const renderItem = (items) =>{
         const listItem = document.createElement('li');
 
         const linkElement = document.createElement("a");
-        linkElement.href = url;
+
+        linkElement.href = url + item["_id"];
+
         linkElement.textContent = item.name;
         listItem.appendChild(linkElement);
 
@@ -24,12 +29,14 @@ const renderItem = (items) =>{
 
 fetch(API_URL)
   .then(response => {
+    console.log('Response status:', response.status);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
     return response.json(); 
   })
   .then(data => {
+    console.log('Fetched user data:', data);
     renderItem(data);
   })
   .catch(error => {
