@@ -1,6 +1,9 @@
+// const API_URL = 'http://localhost:5001/api/users';
+
+// const url = 'http://localhost:5001/user/';
 const API_URL = 'http://profile-cs633.vercel.app/api/users';
 
-const url = 'http://profile-cs633.vercel.app';
+const url = 'http://profile-cs633.vercel.app/user/';
 
 const renderItem = (items) =>{
     
@@ -9,7 +12,7 @@ const renderItem = (items) =>{
         const listItem = document.createElement('li');
 
         const linkElement = document.createElement("a");
-        linkElement.href = url;
+        linkElement.href = url + item["_id"];
         linkElement.textContent = item.name;
         listItem.appendChild(linkElement);
 
