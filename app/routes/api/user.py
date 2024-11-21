@@ -40,8 +40,8 @@ def list_user(start: int, amount: int):
     List users from start index with given amount.
     """
     
-    # if 'user' not in session:
-    #     return redirect(url_for('auth.login'))
+    if 'user' not in session:
+        return redirect(url_for('auth.login'))
     
     users = list(users_collection.find().skip(start).limit(amount))
     
@@ -80,7 +80,8 @@ def create_user():
 
     # Insert user data into MongoDB
     result = users_collection.insert_one(user_data)
-    return jsonify({"message": "User added", "user_id": str(result.inserted_id)})
+    
+    return redirect(url_for("auth.login"))
 
 @user_bp.route('/user/<string:user_id>', methods=['PUT'])
 def update_user(user_id: str):

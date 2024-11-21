@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-
     // Perform the signup logic
     if (email && password && name) {
       fetch(API_URL, {
@@ -38,18 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Handle other non-2xx status codes
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
-          return response.json();
-        })
-        .then((data) => {
-          console.log('Success:', data);
-          alert('Account created successfully!');
-
+          window.location.href = response.url
         })
         .catch((error) => {
           // Handle network or server errors
           console.error('Error:', error.message);
           alert(`Error: ${error.message}`);
-          // window.location.href = 
         });
     } else {
       alert('Please enter both username, email and password.');
