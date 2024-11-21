@@ -1,9 +1,9 @@
 // const API_URL = 'http://localhost:5001/api/users';
 
 // const url = 'http://localhost:5001/user/';
-const API_URL = 'http://profile-cs633.vercel.app/api/users';
+const API_URL = 'https://profile-cs633.vercel.app/api/users';
 
-const url = 'http://profile-cs633.vercel.app/user/';
+const url = 'https://profile-cs633.vercel.app/user/';
 
 const renderItem = (items) =>{
     
