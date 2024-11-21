@@ -2,15 +2,25 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/login_styles.css">
 </head>
 <body>
-    <form id="login-form">
-        <label for="email">BU email:</label>
-        <input type="text" name="email" id="email" required>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <button type="login-button">Login</button>
-        <a href="signup">Don’t have an account?</a>
+    <form id="login-form" class="formming">
+        <div class="form-group">
+            <label for="email">BU email:</label>
+            <input type="text" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <button type="login-button" id="login-button" class="button">Login</button>
+        </div>
+        <div class="form-group">
+            <a href="signup">Don’t have an account?</a>
+        </div>
     </form>
     <script src="../static/js/login.js"></script>
 </body>
