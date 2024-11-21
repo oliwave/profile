@@ -86,7 +86,7 @@ def create_user():
 @user_bp.route('/user/<string:user_id>', methods=['PUT'])
 def update_user(user_id: str):
     """
-    Create a user.
+    Modify a user.
     """
     
     if 'user' not in session:
