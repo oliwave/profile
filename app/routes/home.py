@@ -16,3 +16,10 @@ def profile(user_id: str):
         return redirect(url_for('auth.login'))
 
     return render_template('profile.html', user_id=user_id)
+
+@home_bp.route('/user/edit/<string:user_id>', methods=['GET'])
+def edit(user_id: str):
+    if 'user' not in session:
+        return redirect(url_for('auth.login'))
+
+    return render_template('edit.html', user_id=user_id)
