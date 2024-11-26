@@ -1,0 +1,17 @@
+[contenteditable="true"] {
+    border: 1px dashed transparent; 
+    padding: 5px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+[contenteditable="true"]:hover {
+    border-color: #007bff;
+    background-color: #f9f9f9; 
+    cursor: text;
+}
+
+[contenteditable="true"]:focus {
+    border: 1px solid #007bff; 
+    outline: none;
+    background-color: #fff; 
+}
