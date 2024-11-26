@@ -8,10 +8,12 @@
     border-color: #007bff;
     background-color: #f9f9f9; 
     cursor: text;
+    color: black;
 }
 
 [contenteditable="true"]:focus {
     border: 1px solid #007bff; 
     outline: none;
     background-color: #fff; 
+    color: black;
 }
