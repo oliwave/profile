@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           if (response.redirected) {
+            sessionStorage.setItem('userEmail', email);
+            console.log('User email stored:', email);
             window.location.href = response.url
           }
 

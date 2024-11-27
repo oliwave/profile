@@ -2,6 +2,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveButton = document.getElementById("submit_button");
     const editableElements = document.querySelectorAll('[contenteditable="true"]');
     
+    fetch(`/api/user/${userId}`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Failed to fetch user data");
+    }
+    return response.json();
+  })
+  .then(profileUser => {
+    editableElements.forEach((element) => {
+      const eid = element.id;
+      if (profileUser[eid]) {
+        element.innerText = profileUser[eid];
+      }
+    });
+  })
+  .catch(error => {
+    console.error("Error fetching user data:", error);
+  });
 
     console.log("user id:", userId);
 
@@ -52,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert(`Validation Error: ${error.error}`);
             } else if (response.status === 401) {
                 alert("You are not authorized to perform this action.");
-                window.location.href = '/login'; // 重定向到登录页
+                window.location.href = '/login'; 
             } else if (response.status === 404) {
                 alert("User not found. Please try again.");
             } else {

@@ -45,3 +45,14 @@ fetch(API_URL)
     itemList.textContent = 'Failed to load user data.';
   });
 
+  //try get user detail
+  const loggedInUserEmail = sessionStorage.getItem('userEmail');
+
+  if (loggedInUserEmail) {
+    console.log('Logged-in user email:', loggedInUserEmail);
+  
+    // Use this email for comparison or other logic
+    // e.g., highlight the user's own profile in the list
+  } else {
+    console.error('No logged-in user email found.');
+  }

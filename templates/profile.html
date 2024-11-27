@@ -17,7 +17,7 @@
 				<li class="nav_item"><a class="nav_link" href="#_myLife"><i class='bx bxs-user-circle'></i></a></li>
 				<li class="nav_item"><a class="nav_link" href="#_givingAndGaining"><i class='bx bxs-search'></i></a></li>
 				<li class="nav_item"><a class="nav_link" href="#_contact"><i class='bx bxs-message-dots'></i></a></li>
-				<button id="edit-mode-toggle" class="button">Enter Edit Mode</button>
+				<button id="edit-mode-toggle" class="button" style="display: none;">Enter Edit Mode</button>
 			</ul>			
 		</div>
 		
@@ -34,14 +34,14 @@
 		<div class="introduction" id="_introduction">
 			<div id="_introduction_text">
 				<h2>About</h2>
-				<p>We are team A, a team of five members developing an interactive personal resume website in the form of individual homepages. We will integrate all users to form a human resources center.</p>
+				<p id="about_text">We are team A, a team of five members developing an interactive personal resume website in the form of individual homepages. We will integrate all users to form a human resources center.</p>
 			</div>
 			
 			<div id="_overview">
 				<div class="container">
-				    <div><h2>00+</h2><br>Years of experience</div>
-				    <div><h2>00+</h2><br>Compleate projects</div>
-				    <div><h2>00+</h2><br>Companies works</div>
+				    <div><h2 id="y_o_e">00+</h2><br>Years of experience</div>
+				    <div><h2 id="c_p">00+</h2><br>Compleate projects</div>
+				    <div><h2 id="c_w">00+</h2><br>Companies works</div>
 				</div>
 		</div>
 		
@@ -49,29 +49,26 @@
 			<h2>My Field</h2>
 			<div class="myField-ProfessionalSkill">
 				<h3>Professional Skills</h3>
-				<p class="myField-ProfessionalSkill-text">We are good at Web development, proficient in the related technologies, including but not limited to HTML, CSS, JavaScript, API development, PHP, and database technologies.</p>
+				<p id="professinal_skill" class="myField-ProfessionalSkill-text">We are good at Web development, proficient in the related technologies, including but not limited to HTML, CSS, JavaScript, API development, PHP, and database technologies.</p>
 				
 				<div class="myField-ProfessionalSkill-container">
 					<div class="skills__names">
-					    <i class='bx bxl-html5 skills__icon'></i>
-					    <span class="skills__name">HTML5</span>
+					    <span id="s1" class="skills__name">HTML5</span>
 					</div>
 					<div>
-					    <span class="skills__percentage">95%</span>
+					    <span id="sn1" class="skills__percentage">95%</span>
 					</div>
 					<div class="skills__names">
-					    <i class='bx bxl-html5 skills__icon'></i>
-					    <span class="skills__name">CSS</span>
+					    <span id="s2" class="skills__name">CSS</span>
 					</div>
 					<div>
-					    <span class="skills__percentage">85%</span>
+					    <span id="sn2" class="skills__percentage">85%</span>
 					</div>
 					<div class="skills__names">
-					    <i class='bx bxl-html5 skills__icon'></i>
-					    <span class="skills__name">JAVASCRIPT</span>
+					    <span id="s3" class="skills__name">JAVASCRIPT</span>
 					</div>
 					<div>
-					    <span class="skills__percentage">75%</span>
+					    <span id="sn3" class="skills__percentage">75%</span>
 					</div>
 				</div>
 			</div>
@@ -96,7 +93,7 @@
 		<div class="myLife" id="_myLife">
 			<h2>My Life</h2>
 			<div class="myLife-text">
-				<p>I enjoy spending time with family and friends. Additionally, reading, exercising, going to bars, and traveling are the main themes of my life.<p>
+				<p id="life">I enjoy spending time with family and friends. Additionally, reading, exercising, going to bars, and traveling are the main themes of my life.<p>
 			</div>
 			
 			<div class="myLife-unit">
@@ -114,24 +111,7 @@
 				</a>
 			</div>
 		</div>
-		
-		<div class="Giving and Gaining" id="_givingAndGaining">
-			<h2>Giving and Gaining</h2>
-			<div class="Giving and Gaining-text">
-				<p>You can ask me to offer something, or you can give me something. <p>
-			</div>
-			
-			<div class="Giving-text">
-				<h3>Giving</h3>
-				<p>I'd like to teach some tech-related skills, you can pay me, but you do not have to.</p>
-			</div>
-			
-			<div class="Gaining-text">
-				<h3>Ganing</h3>
-				<p>I want to learn to play baseball game, I can pay for it, but free is better.</p>
-			</div>
-		</div>
-		
+
 		<div class="contact" id="_contact">
 			<h2>Contact</h2>
 			<p>You can email me,</p>
