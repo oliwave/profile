@@ -1,8 +1,8 @@
 const logoutButton = document.getElementById('logout_button');
 
 logoutButton.addEventListener('click', () => {
-    fetch('https://profile-cs633.vercel.app/logout', {
-    //'http://localhost:5001/logout';
+    fetch('http://localhost:5001/logout', {
+    //'https://profile-cs633.vercel.app/logout';
         method: 'GET', // Use GET because your backend requires it
         credentials: 'include', // Include session cookies if necessary
     })

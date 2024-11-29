@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--这个要删除，所有改动在edit上-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="/static/css/styles.css">
+		<title>Profile</title>
+	</head>
+	<body>
+		<button class="button" id="submit_button">Submit edit</button>
+		<div class="navigation">
+			<ul class="navigation-bar">
+				<li class="nav_item"><a class="nav_link active-link" href="#_sayhello"><i class='bx bxs-home'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_introduction"><i class='bx bxs-info-circle'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_myField"><i class='bx bx-sitemap'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_myLife"><i class='bx bxs-user-circle'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_givingAndGaining"><i class='bx bxs-search'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_contact"><i class='bx bxs-message-dots'></i></a></li>
+			</ul>			
+		</div>
+		
+		<div class="sayhello" id="_sayhello">
+			<div class = "sayhello_text">
+			    <h1 id="_say_hi" contenteditable="true">Hi,<br>we are Team A, web developers</h1>
+			</div>
+			<div class="sayhello_photo">
+				<img id="_personal_photo" src="/static/img/photo1.png" width="400" height="250"/>
+			</div>
+			<br>
+		</div>
+		
+		<div class="introduction" id="_introduction">
+			<div id="_introduction_text">
+				<h2>About</h2>
+				<p contenteditable="true">We are team A, a team of five members developing an interactive personal resume website in the form of individual homepages. We will integrate all users to form a human resources center.</p>
+			</div>
+			
+			<div id="_overview">
+				<div class="container">
+				    <div><h2 contenteditable="true">00+</h2><br>Years of experience</div>
+				    <div><h2 contenteditable="true">00+</h2><br>Compleate projects</div>
+				    <div><h2 contenteditable="true">00+</h2><br>Companies works</div>
+				</div>
+		</div>
+		
+		<div class="myField" id="_myField">
+			<h2>My Field</h2>
+			<div class="myField-ProfessionalSkill">
+				<h3>Professional Skills</h3>
+				<p class="myField-ProfessionalSkill-text" contenteditable="true">We are good at Web development, proficient in the related technologies, including but not limited to HTML, CSS, JavaScript, API development, PHP, and database technologies.</p>
+				
+				<div class="myField-ProfessionalSkill-container">
+					<div class="skills__names">
+					    <i class='bx bxl-html5 skills__icon'></i>
+					    <span class="skills__name" contenteditable="true">HTML5</span>
+					</div>
+					<div>
+					    <span class="skills__percentage" contenteditable="true">95%</span>
+					</div>
+					<div class="skills__names">
+					    <i class='bx bxl-html5 skills__icon'></i>
+					    <span class="skills__name" contenteditable="true">CSS</span>
+					</div>
+					<div>
+					    <span class="skills__percentage" contenteditable="true">85%</span>
+					</div>
+					<div class="skills__names">
+					    <i class='bx bxl-html5 skills__icon'></i>
+					    <span class="skills__name" contenteditable="true">JAVASCRIPT</span>
+					</div>
+					<div>
+					    <span class="skills__percentage" contenteditable="true">75%</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="myField-recentWork">				
+				<h3>Recent Work</h3>
+				<a href="" class="work__img">
+				    <img src="/static/img/work1.jpg" width="200" height="100">
+				</a>
+				<a href="" class="work__img">
+				    <img src="/static/img/work2.jpg" width="200" height="100">
+				</a>
+				<a href="" class="work__img">
+				    <img src="/static/img/work3.jpg" width="200" height="100">
+				</a>
+				<a href="" class="work__img">
+				    <img src="/static/img/work4.jpg" width="200" height="100">
+				</a>
+			</div>
+		</div>
+			
+		<div class="myLife" id="_myLife">
+			<h2>My Life</h2>
+			<div class="myLife-text">
+				<p contenteditable="true">I enjoy spending time with family and friends. Additionally, reading, exercising, going to bars, and traveling are the main themes of my life.<p>
+			</div>
+			
+			<div class="myLife-unit">
+				<a href="" class="work__img">
+				    <img src="/static/img/work1.jpg" width="200" height="100">
+				</a>
+				<a href="" class="work__img">
+				    <img src="/static/img/work2.jpg" width="200" height="100">
+				</a>
+				<a href="" class="work__img">
+				    <img src="/static/img/work3.jpg" width="200" height="100">
+				</a>
+				<a href="" class="work__img">
+				    <img src="/static/img/work4.jpg" width="200" height="100">
+				</a>
+			</div>
+		</div>
+		
+		<div class="Giving and Gaining" id="_givingAndGaining">
+			<h2>Giving and Gaining</h2>
+			<div class="Giving and Gaining-text">
+				<p contenteditable="true">You can ask me to offer something, or you can give me something. <p>
+			</div>
+			
+			<div class="Giving-text">
+				<h3>Giving</h3>
+				<p contenteditable="true">I'd like to teach some tech-related skills, you can pay me, but you do not have to.</p>
+			</div>
+			
+			<div class="Gaining-text">
+				<h3>Ganing</h3>
+				<p contenteditable="true"></p>
+			</div>
+		</div>
+		
+		<div class="contact" id="_contact">
+			<h2>Contact</h2>
+			<p>You can email me,</p>
+			<div class="contact-email">
+				<form action="">
+					<input type="mail" placeholder="Email" />
+					<textarea></textarea>
+					<input class="button" type="button" value="contact"/>
+				</form>
+			</div>
+			<p>or,you can leave me a message.</p>
+			<div class="contact-message">
+				<input type="text" name="" id="">
+				<input type="button" class="button" value="send" id="">
+			</div>
+		</div>	
+		<div id="logout-container">
+			<button id="logout_button" class="button">Logout</button>
+		</div>
+		<script>
+			const user_id = "{{ user_id }}";
+		</script>
+		<script src="../static/js/profile.js"></script>
+		<script src="../static/js/logout.js"></script>		
+	</body>
+</html>
