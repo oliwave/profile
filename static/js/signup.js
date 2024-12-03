@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:5001/api/user';
-//const API_URL = 'https://profile-cs633.vercel.app/api/user';
+// const API_URL = 'http://localhost:5001/api/user';
+// const API_URL = 'https://profile-cs633.vercel.app/api/user';
 
 document.addEventListener('DOMContentLoaded', () => {
   const signupForm = document.getElementById('signup-form');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Perform the signup logic
     if (email && password && name) {
-      fetch(API_URL, {
+      fetch('/api/user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
