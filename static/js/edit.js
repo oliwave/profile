@@ -42,27 +42,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     saveButton.addEventListener('click', async () => {
-        const data = {};
+        const formData = new FormData();
+
 
         editableElements.forEach((element, index) => {
             const id = element.id || `editable_${index}`;
-            data[id] = element.innerText.trim();
+            formData.append(id, element.innerText.trim());
         });
+
+        
+        const imageFile = document.getElementById('image-upload').files[0]; 
+        const pdfFile = document.getElementById('pdf-upload').files[0];
+
+        if (imageFile) {
+            formData.append('image', imageFile); 
+        }
+        if (pdfFile) {
+            formData.append('pdf', pdfFile); 
+        }
 
         try {
             const response = await fetch(`/api/user/${userId}`, {
                 method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+                body: formData, // 使用 FormData 作为请求体
             });
-
+    
             if (response.ok) {
                 const result = await response.json();
                 alert('Changes saved successfully!');
                 console.log('Server response:', result);
-
                 // Redirect to user profile
                 window.location.href = `/user/${userId}`;
             } else if (response.status === 400) {

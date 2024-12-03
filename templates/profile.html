@@ -16,7 +16,7 @@
 				<li class="nav_item"><a class="nav_link" href="#_myField"><i class='bx bx-sitemap'></i></a></li>
 				<li class="nav_item"><a class="nav_link" href="#_myLife"><i class='bx bxs-user-circle'></i></a></li>
 				<li class="nav_item"><a class="nav_link" href="#_givingAndGaining"><i class='bx bxs-search'></i></a></li>
-				<li class="nav_item"><a class="nav_link" href="#_contact"><i class='bx bxs-message-dots'></i></a></li>
+				<li class="nav_item"><a class="nav_link" href="#_cv"><i class='bx bxs-message-dots'></i></a></li>
 				<button id="edit-mode-toggle" class="button" style="display: none;">Enter Edit Mode</button>
 			</ul>			
 		</div>
@@ -75,18 +75,7 @@
 			
 			<div class="myField-recentWork">				
 				<h3>Recent Work</h3>
-				<a href="" class="work__img">
-				    <img src="/static/img/work1.jpg" width="200" height="100">
-				</a>
-				<a href="" class="work__img">
-				    <img src="/static/img/work2.jpg" width="200" height="100">
-				</a>
-				<a href="" class="work__img">
-				    <img src="/static/img/work3.jpg" width="200" height="100">
-				</a>
-				<a href="" class="work__img">
-				    <img src="/static/img/work4.jpg" width="200" height="100">
-				</a>
+				<p id="recentwork">I have done a project about how to create a user website.</p>
 			</div>
 		</div>
 			
@@ -95,39 +84,13 @@
 			<div class="myLife-text">
 				<p id="life">I enjoy spending time with family and friends. Additionally, reading, exercising, going to bars, and traveling are the main themes of my life.<p>
 			</div>
-			
-			<div class="myLife-unit">
-				<a href="" class="work__img">
-				    <img src="/static/img/work1.jpg" width="200" height="100">
-				</a>
-				<a href="" class="work__img">
-				    <img src="/static/img/work2.jpg" width="200" height="100">
-				</a>
-				<a href="" class="work__img">
-				    <img src="/static/img/work3.jpg" width="200" height="100">
-				</a>
-				<a href="" class="work__img">
-				    <img src="/static/img/work4.jpg" width="200" height="100">
-				</a>
-			</div>
 		</div>
 
-		<div class="contact" id="_contact">
-			<h2>Contact</h2>
-			<p>You can email me,</p>
-			<div class="contact-email">
-				<form action="">
-					<input type="mail" placeholder="Email" />
-					<textarea></textarea>
-					<input class="button" type="button" value="contact"/>
-				</form>
-			</div>
-			<p>or,you can leave me a message.</p>
-			<div class="contact-message">
-				<input type="text" name="" id="">
-				<input type="button" class="button" value="send" id="">
-			</div>
-		</div>	
+		<div id="_cv">
+			<label for="pdf-upload">Upload CV:</label>
+			<input type="file" id="pdf-upload" accept="application/pdf">
+		</div>
+
 		<div id="logout-container">
 			<button id="logout_button" class="button">Logout</button>
 		</div>

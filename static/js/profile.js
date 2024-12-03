@@ -25,8 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.keys(profileUser).forEach(key => {
       const element = document.getElementById(key);
       if (element) {
-        element.innerText = profileUser[key];
-      }
+        if (key === 'image') {
+            element.innerHTML = `<img src="${profileUser[key]}" alt="Uploaded Image" width="400" height="250">`;
+        } else if (key === 'pdf') {
+            element.innerHTML = `<a href="${profileUser[key]}" target="_blank">View CV</a>`;
+        } else {
+            element.innerText = profileUser[key];
+        }
+    }
     });
   })
   .catch(error => {
