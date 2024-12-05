@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('edit-mode-toggle').style.display = 'none';
     }
 
+    const contactButton = document.getElementById('contactButton');
+    contactButton.addEventListener('click', () => {
+        const mailtoLink = `mailto:${profileEmail}`;
+        window.location.href = mailtoLink; 
+    });
+
     Object.keys(profileUser).forEach(key => {
       const element = document.getElementById(key);
       if (element) {
