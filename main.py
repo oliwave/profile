@@ -13,6 +13,7 @@ logging.basicConfig(
     ]
 )
 
+test
 app = create_app(Flask(__name__, template_folder="./templates"))
 
 if __name__ == '__main__':
