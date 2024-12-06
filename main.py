@@ -20,4 +20,6 @@ if __name__ == '__main__':
     
     enalbe_debug = True if os.getenv("DEBUG") == "True" else False
 
+    print("Hello World!")
+
     app.run(debug=enalbe_debug, host='0.0.0.0', port=os.getenv("PORT"))
